@@ -12,11 +12,6 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :birth_date %>
-    <%= form.date_select :birth_date %>
-  </div>
-
-  <div class="field">
     <%= form.label :first_name %>
     <%= form.text_field :first_name %>
   </div>
@@ -27,18 +22,18 @@
   </div>
 
   <div class="field">
-    <%= form.label :gender %>
-    <%= form.number_field :gender %>
-  </div>
-
-  <div class="field">
     <%= form.label :title %>
     <%= form.text_field :title %>
   </div>
 
   <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
+    <%= form.label :birth_date %>
+    <%= form.date_select :birth_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gender %>
+    <%= form.number_field :gender %>
   </div>
 
   <div class="actions">

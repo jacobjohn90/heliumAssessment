@@ -20,9 +20,9 @@
     <% @employees.each do |employee| %>
       <tr>
         <td><%= employee.id %></td>
-        <td><%= link_to employee.first_name, employee %></td>
+        <td><%= link_to employee.first_name, edit_employee_path(employee) %></td>
         <td><%= employee.last_name %></td>
-        <td><%= employee.birth_date %></td>
+        <td><%= employee.birth_date.strftime('%m/%d/%Y') %></td>
         <td><%= employee.title %></td>
         <td><%= employee.children.count %></td>
         <td><%= employee.email %></td>

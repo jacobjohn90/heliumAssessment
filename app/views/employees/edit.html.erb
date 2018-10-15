@@ -1,6 +1,35 @@
-<h1>Editing Employee</h1>
+<h3>Update Empoloyees Details - <%= @employee.first_name %> <%= @employee.last_name %> </h3>
 
 <%= render 'form', employee: @employee %>
 
-<%= link_to 'Show', @employee %> |
-<%= link_to 'Back', employees_path %>
+<br />
+
+<h3>Children</h3>
+<% if @employee.children.count == 0 %>
+    <p>This employee does not have children</p>
+    <% else %>
+    <table>
+        <thead>
+            <tr>
+            <th>ID</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Birth date</th>
+            <th>Gender</th>
+            <th colspan="3"></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% @employee.children.each do |child| %>
+            <tr>
+                <td><%= child.id %></td>
+                <td><%= child.first_name%></td>
+                <td><%= child.last_name %></td>
+                <td><%= child.birth_date.strftime('%m/%d/%Y') %></td>
+                <td><%= child.gender %></td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+<% end %>
