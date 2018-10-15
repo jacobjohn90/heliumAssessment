@@ -61,6 +61,20 @@ class EmployeesController < ApplicationController
     end
   end
 
+  def generate
+    @employees = Employee.all
+    
+      @employees.each do |employee|
+        characters = Array('a'...'z')
+        randLetters = characters.sample(6).join
+        numbers = Array(0...9)
+        randNum = numbers.sample(3).join
+        @email = employee.first_name.downcase + "." + employee.last_name.downcase + "." + randNum + "." + randLetters + "@heliumservices.com"
+        employee.update(email: @email)
+      end
+      redirect_to employees_url
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_employee

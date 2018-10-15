@@ -2,7 +2,8 @@
 
 <div id='header'>
   <h1>Employees</h1>
-  <%= link_to 'Add New Employee', new_employee_path %>
+  <%= button_to 'Generate Emails', generate_path, method: :get%>
+  <%= link_to '<button>Add New Employee</button>'.html_safe, new_employee_path %>
 </div>
 
 <table>
@@ -15,6 +16,7 @@
       <th>Job Title</th>
       <th>Number of Children</th>
       <th>Email</th>
+      <th>Delete</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -29,8 +31,7 @@
         <td><%= employee.title %></td>
         <td><%= employee.children.count %></td>
         <td><%= employee.email %></td>
-        <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
-        <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '<button>Delete</button>'.html_safe, employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
