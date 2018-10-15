@@ -1,6 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Employees</h1>
+<div id='header'>
+  <h1>Employees</h1>
+  <%= link_to 'Add New Employee', new_employee_path %>
+</div>
 
 <table>
   <thead>
@@ -35,4 +38,3 @@
 
 <br>
 
-<%= link_to 'New Employee', new_employee_path %>
