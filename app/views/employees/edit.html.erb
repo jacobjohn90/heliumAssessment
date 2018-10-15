@@ -1,14 +1,14 @@
-<h3>Update Empoloyees Details - <%= @employee.first_name %> <%= @employee.last_name %> </h3>
+<h2>Update Empoloyees Details - <%= @employee.first_name %> <%= @employee.last_name %> </h2>
 
 <%= render 'form', employee: @employee %>
 
 <br />
 
-<h3>Children</h3>
+<h2>Children</h2>
 <% if @employee.children.count == 0 %>
     <p>This employee does not have children</p>
     <% else %>
-    <table>
+    <table id="childrenTable">
         <thead>
             <tr>
             <th>ID</th>
@@ -16,13 +16,12 @@
             <th>Lastname</th>
             <th>Birth date</th>
             <th>Gender</th>
-            <th colspan="3"></th>
             </tr>
         </thead>
 
         <tbody>
             <% @employee.children.each do |child| %>
-                <tr>
+                <tr id='body'>
                     <td><%= child.id %></td>
                     <td><%= child.first_name%></td>
                     <td><%= child.last_name %></td>

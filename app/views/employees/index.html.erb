@@ -1,9 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <div id='header'>
-  <h1>Employees</h1>
-  <%= button_to 'Generate Emails', generate_path, method: :get%>
-  <%= link_to '<button>Add New Employee</button>'.html_safe, new_employee_path %>
+  <h2>Employees</h2>
+  <div id='buttonContainer'>
+    <%= button_to 'Generate Emails', generate_path, method: :get, :class => 'button add'%>
+    <%= link_to "<button class='button add'>Add New Employee</button>".html_safe, new_employee_path %>
+  </div>
 </div>
 
 <table>
@@ -17,13 +19,12 @@
       <th>Number of Children</th>
       <th>Email</th>
       <th>Delete</th>
-      <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @employees.each do |employee| %>
-      <tr>
+      <tr id='body'>
         <td><%= employee.id %></td>
         <td><%= link_to employee.first_name, edit_employee_path(employee) %></td>
         <td><%= employee.last_name %></td>
@@ -31,7 +32,7 @@
         <td><%= employee.title %></td>
         <td><%= employee.children.count %></td>
         <td><%= employee.email %></td>
-        <td><%= link_to '<button>Delete</button>'.html_safe, employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to "<button class='button delete'>Delete</button>".html_safe, employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

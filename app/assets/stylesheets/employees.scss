@@ -1,3 +1,40 @@
-// Place all the styles related to the Employees controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10vh;
+}
+#buttonContainer {
+    display: flex;
+    margin-right: 20vw;
+}
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    td, th {
+        border: 1px solid #000;
+        text-align: center;
+        padding: 8px;
+    }
+    #body:nth-child(odd) {
+    background-color: #b1c4d3be;
+    }
+}
+.button {
+    color: white;
+    padding: 10px 20px;
+}
+.add {
+    background-color: rgb(0, 81, 255);
+    margin-right: 10px;
+}
+.delete {
+    background-color: red;
+    padding: 5px 10px;
+}
+#childrenTable {
+    width: 80vw;
+}
+form {
+    text-align: center;
+}
